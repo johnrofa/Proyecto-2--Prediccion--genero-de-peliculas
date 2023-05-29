@@ -1,20 +1,15 @@
 from flask import Flask
 from flask_restx import Api, Resource, fields
 import os
+import joblib
 import pandas as pd
 import numpy as np
 from flask_cors import CORS
-
-
-from sklearn.feature_extraction.text import CountVectorizer, TfidfVectorizer
-from sklearn.preprocessing import MultiLabelBinarizer
-from sklearn.multiclass import OneVsRestClassifier
-from sklearn.ensemble import RandomForestRegressor, RandomForestClassifier
-from sklearn.metrics import r2_score, roc_auc_score
-from sklearn.model_selection import cross_val_score
+from sklearn.feature_extraction.text import CountVectorizer
+from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import GridSearchCV
 from sklearn.model_selection import RandomizedSearchCV
-import joblib
+
 
 
 #Importar modelo y transformación
